@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 380" role="img" aria-label="Laptop showing code with a graduation cap">
+  <circle cx="400" cy="90" r="70" fill="#ffffff" opacity="0.12"/>
+  <circle cx="90" cy="300" r="50" fill="#ffffff" opacity="0.12"/>
+  <!-- laptop screen -->
+  <rect x="90" y="70" width="340" height="220" rx="14" fill="#ffffff"/>
+  <rect x="106" y="86" width="308" height="188" rx="8" fill="#fff1f0"/>
+  <!-- code lines -->
+  <rect x="126" y="110" width="90" height="10" rx="5" fill="#d82028"/>
+  <rect x="226" y="110" width="60" height="10" rx="5" fill="#f2a3a6"/>
+  <rect x="146" y="136" width="120" height="10" rx="5" fill="#f2a3a6"/>
+  <rect x="146" y="162" width="80" height="10" rx="5" fill="#d82028"/>
+  <rect x="236" y="162" width="100" height="10" rx="5" fill="#f2a3a6"/>
+  <rect x="126" y="188" width="60" height="10" rx="5" fill="#d82028"/>
+  <text x="330" y="250" font-family="Georgia, serif" font-size="64" font-weight="bold" fill="#d82028">&lt;/&gt;</text>
+  <!-- laptop base -->
+  <path d="M60 290 H460 L440 316 Q436 322 428 322 H92 Q84 322 80 316 Z" fill="#ffffff"/>
+  <rect x="220" y="292" width="80" height="8" rx="4" fill="#f2a3a6"/>
+  <!-- graduation cap -->
+  <polygon points="390,40 460,68 390,96 320,68" fill="#1f1a1a"/>
+  <path d="M350 82 V108 Q390 130 430 108 V82 L390 98 Z" fill="#3a3030"/>
+  <line x1="454" y1="71" x2="454" y2="108" stroke="#ffffff" stroke-width="4"/>
+  <circle cx="454" cy="112" r="6" fill="#ffffff"/>
+</svg>

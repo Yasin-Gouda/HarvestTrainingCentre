@@ -1,0 +1,529 @@
+/* =========================================================
+   Harvest Academy - style.css
+   Sections: 1 Variables & Reset | 2 Typography | 3 Buttons
+             4 Navbar | 5 Hero | 6 Courses & Cards
+             7 Promo banner | 8 About | 9 Footer | 10 Responsive
+   ========================================================= */
+
+
+/* ---------- 1. CSS VARIABLES & RESET (Task 5) ---------- */
+/* Colors and spacing are defined once in :root and reused everywhere */
+:root {
+  --primary: #d82028;        /* main red taken from the Harvest logo */
+  --primary-dark: #a3131a;   /* darker red for hover states and footer */
+  --ink: #2b2222;            /* main text color */
+  --soft: #fff1f0;           /* very light red for backgrounds */
+  --white: #ffffff;
+  --radius: 12px;            /* shared rounded corners */
+  --space: 24px;             /* shared spacing unit */
+  --shadow: 0 4px 14px rgba(0, 0, 0, 0.12);
+}
+
+/* Universal selector: removes default margin/padding (Task 1)
+   and applies border-box sizing to every element (Task 6) */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Element selector */
+body {
+  font-family: "Segoe UI", Tahoma, Arial, sans-serif;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--ink);
+  background-color: var(--white);
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+ul {
+  list-style: none;
+}
+
+/* ID-style anchor offset so the sticky navbar does not cover section titles */
+section,
+footer {
+  scroll-margin-top: 80px;
+}
+
+
+/* ---------- 2. TYPOGRAPHY (Task 5) ---------- */
+/* Grouping selector: same font for all headings */
+h1,
+h2,
+h3 {
+  font-family: Georgia, "Times New Roman", serif;
+  line-height: 1.2;
+}
+
+h1 {
+  font-size: 3rem;
+  font-weight: 700;
+}
+
+h2 {
+  font-size: 2.2rem;
+  font-weight: 700;
+}
+
+h3 {
+  font-size: 1.3rem;
+  font-weight: 600;
+}
+
+p {
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.7;
+}
+
+.section-title {
+  text-align: center;
+  color: var(--primary);
+}
+
+.section-subtitle {
+  text-align: center;
+  margin-top: 8px;
+  margin-bottom: 40px;   /* margin = space OUTSIDE the element */
+}
+
+
+/* ---------- 3. BUTTONS (Task 7: hover, active, focus) ---------- */
+.btn {
+  display: inline-block;
+  padding: 12px 26px;
+  border-radius: 50px;
+  border: 2px solid transparent;
+  font-size: 1rem;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color 0.2s, color 0.2s, transform 0.1s;
+}
+
+.btn-primary,
+.btn-register {
+  background-color: var(--primary);
+  color: var(--white);
+}
+
+.btn-primary:hover,
+.btn-register:hover {
+  background-color: var(--primary-dark);
+}
+
+.btn-light {
+  background-color: var(--white);
+  color: var(--primary);
+}
+
+.btn-light:hover {
+  background-color: var(--soft);
+}
+
+/* :active - button is pressed down slightly */
+.btn:active {
+  transform: translateY(2px) scale(0.97);
+}
+
+/* :focus - visible outline for keyboard users (Tab key) */
+a:focus,
+.btn:focus {
+  outline: 3px solid var(--ink);
+  outline-offset: 3px;
+}
+
+
+/* ---------- 4. NAVBAR (Task 1) ---------- */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 5%;
+  background-color: var(--white);
+  box-shadow: var(--shadow);
+  position: sticky;      /* stays at the top while scrolling */
+  top: 0;
+  z-index: 100;          /* keeps navbar above all other content */
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+}
+
+.brand-logo {
+  width: 48px;
+  height: 48px;
+  border-radius: 8px;
+}
+
+.brand-name {
+  font-family: Georgia, serif;
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--primary);
+}
+
+.nav-links {
+  display: flex;
+  gap: 32px;
+}
+
+/* Descendant selector: only links inside .nav-links */
+.nav-links a {
+  text-decoration: none;
+  color: var(--ink);
+  font-weight: 600;
+  padding-bottom: 4px;
+  border-bottom: 2px solid transparent;
+  transition: color 0.2s, border-color 0.2s;
+}
+
+/* :hover - link turns red with an underline */
+.nav-links a:hover {
+  color: var(--primary);
+  border-bottom-color: var(--primary);
+}
+
+
+/* ---------- 5. HERO (Task 2) ---------- */
+/* ID selector */
+#home {
+  background-color: var(--primary);
+  color: var(--white);
+}
+
+.hero {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+  min-height: 520px;        /* controls section height */
+  padding: 70px 5%;
+}
+
+.hero-text {
+  flex: 1;
+  max-width: 560px;         /* controls text width */
+}
+
+.hero-text h1 {
+  margin-bottom: 16px;
+}
+
+.hero-text p {
+  font-size: 1.15rem;
+  margin-bottom: 28px;
+}
+
+.hero-image {
+  flex: 1;
+  max-width: 520px;
+}
+
+
+/* ---------- 6. COURSES & CARDS (Task 3) ---------- */
+.courses {
+  padding: 80px 5%;
+}
+
+/* Grouping selector: cards and promo share the same width/centering */
+.cards,
+.promo {
+  max-width: 1100px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Flexbox: three cards in one row on desktop */
+.cards {
+  display: flex;
+  gap: var(--space);
+}
+
+.card {
+  flex: 1;
+  background-color: var(--white);
+  border: 1px solid #f3c9cb;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  transition: transform 0.25s, box-shadow 0.25s, border-color 0.25s;
+
+  /* Task 6: the card is the positioning parent for the "Popular" label */
+  position: relative;
+}
+
+/* Hover effect: card lifts and the shadow grows */
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 26px rgba(216, 32, 40, 0.25);
+  border-color: var(--primary);
+}
+
+.card-img {
+  width: 100%;
+  height: 170px;
+  object-fit: cover;
+  border-radius: var(--radius) var(--radius) 0 0;
+  position: relative;
+  z-index: 1;               /* image sits at level 1... */
+}
+
+/* Descendant selector: padding = space INSIDE the card, around the text */
+.card .card-body {
+  padding: var(--space);
+}
+
+.card-body h3 {
+  margin-bottom: 10px;
+}
+
+.card-body p {
+  margin-bottom: 12px;
+}
+
+.card-body .duration {
+  font-weight: 600;
+  color: var(--primary);
+  margin-bottom: 18px;
+}
+
+/* ---------- Task 6: "Popular" card & label ---------- */
+.card-popular {
+  border: 2px solid var(--primary);   /* thicker border marks the special card */
+}
+
+/* position: absolute takes the label out of the normal flow, so it
+   does NOT push the card content or break the layout.
+   top: -14px moves it up so it overlaps the card's top edge.
+   z-index: 2 puts it above the card image (z-index: 1). */
+.badge {
+  position: absolute;
+  top: -14px;
+  right: 20px;
+  z-index: 2;
+  background-color: var(--primary-dark);
+  color: var(--white);
+  padding: 6px 16px;
+  border-radius: 50px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  box-shadow: var(--shadow);
+}
+
+
+/* ---------- 7. PROMO BANNER (Task 6) ---------- */
+/* Box model demo:
+   - width: 100% (up to max-width 1100px) and height: 140px
+   - padding: space inside the border, around the text
+   - margin-top: space outside the border, separating it from the cards
+   - border: visible edge of the box
+   - box-sizing: border-box (set globally) keeps padding and border
+     inside the declared width/height */
+.promo {
+  position: relative;        /* parent for the decorative circle */
+  overflow: hidden;          /* hides the part of the circle outside the banner */
+  width: 100%;
+  min-height: 140px;
+  margin-top: 56px;
+  padding: 32px;
+  background-color: var(--primary-dark);
+  border: 3px solid var(--primary);
+  border-radius: var(--radius);
+  color: var(--white);
+}
+
+/* Circle is positioned absolutely at z-index 1 (behind the text) */
+.promo-circle {
+  position: absolute;
+  top: -70px;
+  right: -50px;
+  width: 240px;
+  height: 240px;
+  border-radius: 50%;
+  background-color: var(--primary);
+  z-index: 1;
+}
+
+/* Text is relative with a higher z-index (2), so it stays on top of the circle */
+.promo-content {
+  position: relative;
+  z-index: 2;
+}
+
+.promo-content h3 {
+  margin-bottom: 6px;
+}
+
+
+/* ---------- 8. ABOUT (Task 4) ---------- */
+.about {
+  display: flex;
+  align-items: center;
+  gap: 50px;
+  padding: 80px 5%;
+  background-color: var(--soft);   /* suitable background color */
+}
+
+.about-image {
+  flex: 1;
+}
+
+.about-image img {
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+.about-text {
+  flex: 1;
+}
+
+/* Heading and paragraph are styled separately */
+.about-heading {
+  color: var(--primary);
+  margin-bottom: 18px;
+}
+
+.about-paragraph {
+  margin-bottom: 14px;
+  color: var(--ink);
+}
+
+/* Text link: shows :hover, :visited and :focus states */
+.text-link {
+  display: inline-block;
+  margin-top: 8px;
+  font-weight: 600;
+  color: var(--primary);
+}
+
+.text-link:visited {
+  color: var(--primary-dark);
+}
+
+.text-link:hover {
+  text-decoration: none;
+  color: var(--ink);
+}
+
+
+/* ---------- 9. FOOTER (Task 7) ---------- */
+.footer {
+  background-color: var(--primary-dark);
+  color: var(--white);
+  padding: 56px 5% 24px;
+}
+
+.footer-grid {
+  display: flex;
+  justify-content: space-between;
+  gap: 40px;
+  max-width: 1100px;
+  margin: 0 auto 32px;
+}
+
+.footer-col h3 {
+  margin-bottom: 14px;
+}
+
+.footer-col p,
+.social-links li {
+  margin-bottom: 6px;
+}
+
+/* Footer links: different style for normal, visited, hover */
+.social-links a {
+  color: var(--white);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+}
+
+.social-links a:visited {
+  color: #ffc9cb;            /* visited links look softer */
+}
+
+.social-links a:hover {
+  border-bottom-color: var(--white);
+}
+
+/* Focus outline must be light on the dark footer to stay visible */
+.footer a:focus {
+  outline-color: var(--white);
+}
+
+.copyright {
+  text-align: center;
+  font-size: 0.9rem;
+  padding-top: 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+
+/* ---------- 10. RESPONSIVE ---------- */
+@media (max-width: 900px) {
+  .navbar {
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  nav {
+    order: 3;                /* links drop to their own row */
+    width: 100%;
+  }
+
+  .nav-links {
+    justify-content: center;
+    gap: 20px;
+  }
+
+  .hero,
+  .about {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .hero-text {
+    max-width: 100%;
+  }
+
+  .cards,
+  .footer-grid {
+    flex-direction: column;
+  }
+
+  .cards {
+    gap: 36px;               /* extra room for the Popular label */
+  }
+}
+
+@media (max-width: 600px) {
+  h1 {
+    font-size: 2.1rem;
+  }
+
+  h2 {
+    font-size: 1.7rem;
+  }
+
+  .brand-name {
+    font-size: 1.15rem;
+  }
+
+  .courses,
+  .about {
+    padding: 56px 5%;
+  }
+}
