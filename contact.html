@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact | Harvest Academy</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ===== Task 1: Navbar (same on every page) ===== -->
+  <header class="navbar">
+    <a href="index.html" class="brand">
+      <img src="images/logo.png" alt="Harvest logo" class="brand-logo">
+      <span class="brand-name">Harvest Academy</span>
+    </a>
+
+    <nav>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="courses.html">Courses</a></li>
+        <li><a href="contact.html" class="active">Contact</a></li>
+      </ul>
+    </nav>
+
+    <a href="contact.html" class="btn btn-register">Register</a>
+  </header>
+
+  <main>
+
+    <!-- ===== Contact page ===== -->
+    <section id="contact" class="contact">
+      <h2 class="section-title">Contact Us</h2>
+      <p class="section-subtitle">Questions about a course? Send us a message.</p>
+
+      <div class="contact-grid">
+        <div class="contact-info">
+          <h3>Get in touch</h3>
+          <p>Email: info@harvestacademy.com</p>
+          <p>Phone: +20 100 000 0000</p>
+          <p>Address: Mansoura, Egypt</p>
+        </div>
+
+        <!-- No JavaScript is used, so the form only demonstrates the styling and :focus state -->
+        <form class="contact-form" action="#" method="get">
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name" placeholder="Your name">
+
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" placeholder="you@example.com">
+
+          <label for="message">Message</label>
+          <textarea id="message" name="message" rows="5" placeholder="How can we help?"></textarea>
+
+          <button type="submit" class="btn btn-primary">Send Message</button>
+        </form>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===== Task 7: Footer (same on every page) ===== -->
+  <footer class="footer">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <h3>Harvest Academy</h3>
+        <p>Training and Education Center</p>
+      </div>
+
+      <div class="footer-col">
+        <h3>Contact</h3>
+        <p>Email: info@harvestacademy.com</p>
+        <p>Phone: +20 100 000 0000</p>
+        <p>Address: Mansoura, Egypt</p>
+      </div>
+
+      <div class="footer-col">
+        <h3>Follow us</h3>
+        <ul class="social-links">
+          <li><a href="https://www.facebook.com" target="_blank" rel="noopener">Facebook</a></li>
+          <li><a href="https://www.instagram.com" target="_blank" rel="noopener">Instagram</a></li>
+          <li><a href="https://www.linkedin.com" target="_blank" rel="noopener">LinkedIn</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <p class="copyright">&copy; 2026 Harvest Academy. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>

@@ -1,8 +1,9 @@
 /* =========================================================
    Harvest Academy - style.css
+   Used by all pages: index, about, courses, contact
    Sections: 1 Variables & Reset | 2 Typography | 3 Buttons
              4 Navbar | 5 Hero | 6 Courses & Cards
-             7 Promo banner | 8 About | 9 Footer | 10 Responsive
+             7 Promo banner | 8 About | Contact | 9 Footer | 10 Responsive
    ========================================================= */
 
 
@@ -38,6 +39,22 @@ body {
   line-height: 1.6;
   color: var(--ink);
   background-color: var(--white);
+
+  /* Column layout: footer stays at the bottom even on short pages */
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* main grows to fill the space between navbar and footer */
+main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+main > section {
+  flex: 1;
 }
 
 img {
@@ -47,12 +64,6 @@ img {
 
 ul {
   list-style: none;
-}
-
-/* ID-style anchor offset so the sticky navbar does not cover section titles */
-section,
-footer {
-  scroll-margin-top: 80px;
 }
 
 
@@ -192,8 +203,10 @@ a:focus,
   transition: color 0.2s, border-color 0.2s;
 }
 
-/* :hover - link turns red with an underline */
-.nav-links a:hover {
+/* :hover - link turns red with an underline.
+   .active marks the page the visitor is currently on (same look). */
+.nav-links a:hover,
+.nav-links a.active {
   color: var(--primary);
   border-bottom-color: var(--primary);
 }
@@ -420,6 +433,70 @@ a:focus,
 }
 
 
+/* ---------- CONTACT PAGE ---------- */
+.contact {
+  padding: 80px 5%;
+}
+
+.contact-grid {
+  display: flex;
+  gap: 40px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.contact-info {
+  flex: 1;
+  padding: var(--space);
+  background-color: var(--soft);
+  border-left: 4px solid var(--primary);
+  border-radius: var(--radius);
+  align-self: flex-start;
+}
+
+.contact-info h3 {
+  color: var(--primary);
+  margin-bottom: 12px;
+}
+
+.contact-info p {
+  margin-bottom: 6px;
+}
+
+.contact-form {
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.contact-form label {
+  font-weight: 600;
+}
+
+.contact-form input,
+.contact-form textarea {
+  padding: 12px;
+  border: 2px solid #f3c9cb;
+  border-radius: var(--radius);
+  font-family: inherit;
+  font-size: 1rem;
+  margin-bottom: 8px;
+}
+
+/* :focus - red border and glow while typing in a field */
+.contact-form input:focus,
+.contact-form textarea:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(216, 32, 40, 0.25);
+}
+
+.contact-form .btn {
+  align-self: flex-start;
+}
+
+
 /* ---------- 9. FOOTER (Task 7) ---------- */
 .footer {
   background-color: var(--primary-dark);
@@ -500,7 +577,8 @@ a:focus,
   }
 
   .cards,
-  .footer-grid {
+  .footer-grid,
+  .contact-grid {
     flex-direction: column;
   }
 
@@ -523,7 +601,8 @@ a:focus,
   }
 
   .courses,
-  .about {
+  .about,
+  .contact {
     padding: 56px 5%;
   }
 }

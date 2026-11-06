@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Courses | Harvest Academy</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ===== Task 1: Navbar (same on every page) ===== -->
+  <header class="navbar">
+    <a href="index.html" class="brand">
+      <img src="images/logo.png" alt="Harvest logo" class="brand-logo">
+      <span class="brand-name">Harvest Academy</span>
+    </a>
+
+    <nav>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="courses.html" class="active">Courses</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+
+    <a href="contact.html" class="btn btn-register">Register</a>
+  </header>
+
+  <main>
+
+    <!-- ===== Task 3 + Task 6: Courses ===== -->
+    <section id="courses" class="courses">
+      <h2 class="section-title">Our Courses</h2>
+      <p class="section-subtitle">Three paths to get you job-ready.</p>
+
+      <div class="cards">
+
+        <!-- Card 1: the "special" card used for Task 6 (Popular label) -->
+        <article class="card card-popular">
+          <!-- .badge is absolutely positioned relative to .card-popular -->
+          <span class="badge">Popular</span>
+          <img src="images/frontend.svg" alt="Front-end development icon" class="card-img">
+          <div class="card-body">
+            <h3>Front-End Development</h3>
+            <p>Build responsive websites with HTML, CSS and modern layout techniques.</p>
+            <p class="duration">Duration: 8 weeks</p>
+            <a href="contact.html" class="btn btn-primary">Learn More</a>
+          </div>
+        </article>
+
+        <article class="card">
+          <img src="images/backend.svg" alt="Back-end development icon" class="card-img">
+          <div class="card-body">
+            <h3>Back-End Development</h3>
+            <p>Learn servers, databases and APIs to power the apps people use every day.</p>
+            <p class="duration">Duration: 10 weeks</p>
+            <a href="contact.html" class="btn btn-primary">Learn More</a>
+          </div>
+        </article>
+
+        <article class="card">
+          <img src="images/mobile.svg" alt="Mobile development icon" class="card-img">
+          <div class="card-body">
+            <h3>Mobile Development</h3>
+            <p>Create apps for Android and iOS and publish your first app to a real phone.</p>
+            <p class="duration">Duration: 12 weeks</p>
+            <a href="contact.html" class="btn btn-primary">Learn More</a>
+          </div>
+        </article>
+
+      </div>
+
+      <!-- Task 6: promotional banner (box model + positioning demo) -->
+      <div class="promo">
+        <!-- decorative circle sits BEHIND the text (z-index 1 < 2) -->
+        <span class="promo-circle"></span>
+        <div class="promo-content">
+          <h3>Register this month and get 20% off</h3>
+          <p>Limited seats in every course.</p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===== Task 7: Footer (same on every page) ===== -->
+  <footer class="footer">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <h3>Harvest Academy</h3>
+        <p>Training and Education Center</p>
+      </div>
+
+      <div class="footer-col">
+        <h3>Contact</h3>
+        <p>Email: info@harvestacademy.com</p>
+        <p>Phone: +20 100 000 0000</p>
+        <p>Address: Mansoura, Egypt</p>
+      </div>
+
+      <div class="footer-col">
+        <h3>Follow us</h3>
+        <ul class="social-links">
+          <li><a href="https://www.facebook.com" target="_blank" rel="noopener">Facebook</a></li>
+          <li><a href="https://www.instagram.com" target="_blank" rel="noopener">Instagram</a></li>
+          <li><a href="https://www.linkedin.com" target="_blank" rel="noopener">LinkedIn</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <p class="copyright">&copy; 2026 Harvest Academy. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>
